@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+//classes de formulário
+form {
+    width: 525px;
+    margin: 0 auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+}
+
+.input-label{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
