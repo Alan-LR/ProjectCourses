@@ -1,9 +1,22 @@
 <div class="home-container">
     <h1>Veja o que estão compartilhando</h1>
     <!--Form de busca-->
-    <div *ngIf="listCourses.length > 0; else noCourses">
+    <div class="search-container">
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Pesquisar</mat-label>
+                <input matInput placeholder="Busque por um momento..." (input)="search($event)">
+                <mat-icon>search</mat-icon>
+            </mat-form-field>
+        </form>
+
+
+    </div>
+
+    <div *ngIf="courses.length > 0; else noCourses">
         <div class="moments-container">
-            <mat-card class="example-card moment" *ngFor="let course of listCourses">
+            <mat-card class="example-card moment" *ngFor="let course of courses">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title>{{course.nome}}</mat-card-title>
@@ -11,7 +24,7 @@
                 </mat-card-header>
                 <mat-card-content>
                     <p>
-                        Aulas: 
+                        Aulas:
                     </p>
                     <p><a routerLink="course/{{ course.id }}">Detalhes</a></p>
                 </mat-card-content>

@@ -12,21 +12,16 @@
 .moments-container {
     display: flex;
     flex-wrap: wrap;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .moment {
-    width: 32%;
-    margin-bottom: 1em;
-    text-align: center;
-}
-
-.moment img {
-    width: 100%;
-    height: 300px;
-    margin-bottom: 1em;
+  width: 400px;
+  margin-bottom: 1em;
+  margin-right: 20px;
+  text-align: center;
 }
 
 .moment h3,
@@ -34,10 +29,6 @@
     margin-bottom: 1em;
 }
 
-.moment .date {
-    font-size: 0.8em;
-    font-style: italic;
-}
 
 a {
     color: #673ab7;
@@ -51,22 +42,37 @@ a:hover {
 .search-container {
     margin-bottom: 2em;
     width: 100%;
-}
-
-.search-container form {
+  }
+  
+  .search-container form {
     width: 30%;
     position: relative;
-}
+  }
 
-.search-container fa-icon {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-}
 
-.search-container input {
+.search-container{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    
+  }
+  .search-container input {
     padding: 0.5em;
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
     text-align: center;
-}
+    margin-right: 10px;
+  }
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

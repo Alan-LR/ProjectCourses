@@ -10,15 +10,36 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  listCourses: Course[] = []
+  allCourses: Course[] = [] //USADO PARA BUSCAR COM ANGULAR
+  courses: Course[] = []
+  searchTerm: string = '';
 
   constructor(private courseService: CourseService){
 
   }
 
   ngOnInit(): void{
-    this.courseService.getCourses().subscribe((items) => (this.listCourses = items));
-    
+    return this.buscarCursos()
+  }
+
+  buscarCursos(){
+    this.courseService.getCourses().subscribe((items) => {
+      const data = items
+     
+      this.allCourses = data //PRECISAMOS PARA A BUSCA COM ANGULAR
+      this.courses = data
+    });
+
+  }
+
+  //FAZEMOS A BUSCA SOMENTE NO FRONT COM ESSE MÉTODO
+  search(e: Event): void {
+    const target = e.target as HTMLInputElement
+    const value = target.value.toLowerCase()
+
+    this.courses = this.allCourses.filter((course) => {
+      return course.nome.toLowerCase().includes(value)
+    });
   }
 
 }

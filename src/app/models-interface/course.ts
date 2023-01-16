@@ -1,5 +1,5 @@
-export class Course {
-    id: number;
+export interface Course {
+    id?: number;
     nome: string;
     categoria: string;
 
