@@ -16,7 +16,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewCourseComponent } from './components/pages/new-course/new-course.component';
-import { HttpClientModule } from '@angular/common/http'; //Para utilizar o services
+import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './components/messages/messages.component'; //Para utilizar o services
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -27,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http'; //Para utilizar o servi
     CourseFormComponent,
     AboutComponent,
     HomeComponent,
-    NewCourseComponent
+    NewCourseComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http'; //Para utilizar o servi
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

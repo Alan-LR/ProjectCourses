@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { MessageService } from './../../services/message.service';
 import { Course } from './../../models-interface/course';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -17,6 +19,8 @@ export class CourseFormComponent {
 
   constructor(private courseService: CourseService,
     private fb : FormBuilder,
+    private messageService: MessageService,
+    private router: Router
     ){
 
   }
@@ -31,6 +35,8 @@ export class CourseFormComponent {
 
   createCourse(){
     this.courseService.postCourses(this.courseForm.value).subscribe(result =>{});
+    this.messageService.add('Curso adicionado com sucesso!');
+    this.router.navigate(['/'])
   }
 
 }
