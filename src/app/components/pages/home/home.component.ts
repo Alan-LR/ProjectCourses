@@ -14,6 +14,8 @@ export class HomeComponent {
   courses: Course[] = []
   searchTerm: string = '';
 
+  displayedColumns: string[] = ['nome', 'categoria'];
+
   constructor(private courseService: CourseService){
 
   }
@@ -40,6 +42,10 @@ export class HomeComponent {
     this.courses = this.allCourses.filter((course) => {
       return course.nome.toLowerCase().includes(value)
     });
+  }
+
+  testeId(id: number){
+    console.log('esse é o id: ' + id)
   }
 
 }

@@ -1,78 +1,81 @@
 .home-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search-container form {
+  width: 30%;
+  position: relative;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-container input {
+  padding: 0.5em;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  margin-right: 10px;
 }
 
 .home-container h1 {
-    margin-bottom: 0.5em;
-}
-
-.moments-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-    margin: 0 auto;
-    justify-content: space-evenly;
-}
-
-.moment {
-  width: 400px;
-  margin-bottom: 1em;
-  margin-right: 20px;
-  text-align: center;
-}
-
-.moment h3,
-.moment p {
-    margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 
 a {
-    color: #673ab7;
-    padding: 0.3em 0.6em;
+  color: #673ab7;
+  padding: 0.3em 0.6em;
 }
 
 a:hover {
-    background-color: #efefef;
+  background-color: #efefef;
 }
-
-.search-container {
-    margin-bottom: 2em;
-    width: 100%;
-  }
-  
-  .search-container form {
-    width: 30%;
-    position: relative;
-  }
-
-
-.search-container{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2em;
-    
-  }
-  .search-container input {
-    padding: 0.5em;
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-    margin-right: 10px;
-  }
 
 
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+//CSS tabela
+
+
+.tamanho-table{
+  width: 95%;
+  margin: 1em auto;
+ 
+}
+
+
+.demo-table {
+  width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

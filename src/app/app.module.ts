@@ -19,6 +19,9 @@ import { NewCourseComponent } from './components/pages/new-course/new-course.com
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './components/messages/messages.component'; //Para utilizar o services
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import { CourseComponent } from './components/course/course.component';
+
 
 
 
@@ -31,7 +34,8 @@ import {MatCardModule} from '@angular/material/card';
     AboutComponent,
     HomeComponent,
     NewCourseComponent,
-    MessagesComponent
+    MessagesComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
