@@ -21,6 +21,8 @@ import { MessagesComponent } from './components/messages/messages.component'; //
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { CourseComponent } from './components/course/course.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -35,7 +37,8 @@ import { CourseComponent } from './components/course/course.component';
     HomeComponent,
     NewCourseComponent,
     MessagesComponent,
-    CourseComponent
+    CourseComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { CourseComponent } from './components/course/course.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

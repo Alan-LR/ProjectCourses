@@ -36,7 +36,9 @@ export class CourseFormComponent {
   createCourse(){
     this.courseService.postCourses(this.courseForm.value).subscribe(result =>{});
     this.messageService.add('Curso adicionado com sucesso!');
-    this.router.navigate(['/'])
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 1000);
   }
 
 }

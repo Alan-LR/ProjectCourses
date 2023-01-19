@@ -20,7 +20,6 @@ export class MessageService {
 
   clear(){
     this.message = '';
-    this.router.navigate(['/']);
   }
 
 }

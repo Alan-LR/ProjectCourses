@@ -1,1 +1,31 @@
-<p>course works!</p>
+<div class="course">
+    <mat-card class="mat-card-style tamanho-table" style="margin-bottom: 0.8em;">
+        <mat-card-content>
+
+            <mat-toolbar color="primary">
+                <span>Curso:</span>
+            </mat-toolbar>
+
+            <mat-card class="items-curso">
+                <div class="posicao-curso">
+                    <mat-card-content style="width: 50%;"><h3>Nome: {{course.nome}}</h3></mat-card-content>
+                    <mat-card-content style="width: 50%;"><h3>Categoria: {{course.categoria}}</h3></mat-card-content>
+                </div>
+                <div>
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a home icon" (click)="deleteCourse(course.curso_id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </mat-card>
+
+        </mat-card-content>
+      </mat-card>
+</div>
+
+<div class="lesson">
+
+</div>
+

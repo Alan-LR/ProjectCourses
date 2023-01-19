@@ -1,0 +1,24 @@
+.tamanho-table{
+    width: 95%;
+    margin: 1em auto;
+   
+  }
+
+  .items-curso{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+  }
+  .posicao-curso{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 70%;
+  }
+
+  h3{
+    color: #3f51b5;
+    margin-bottom: 0.5em;
+  }
