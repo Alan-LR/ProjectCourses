@@ -28,15 +28,6 @@ export class CourseService {
     return this.http.put<Course>(url, courseData);
   }
 
-  // async updateMoment(id: Number, formData: FormData): Promise<Observable<FormData>>{
-  //   const url = `${this.apiUrl}/${id}`;
-  //   return this.http.put<FormData>(url, formData);
-  // }
-
-  // createMoment(formData: FormData): Observable<FormData> {
-  //   return this.http.post<FormData>(this.apiUrl, formData)
-  // }
-
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.apiUrl)
   }

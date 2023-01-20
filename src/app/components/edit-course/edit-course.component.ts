@@ -37,11 +37,8 @@ export class EditCourseComponent {
   }
 
   editHandler(courseData: Course) {
-    //Bloco de código para alterar as informações do formulário com a info que veio do getCourseId
+    //Pegando as informações do formulário, depois passarei o novo conteúdo ao service para alterar
     const id = this.course.curso_id;
-    const formData = new FormData();
-    formData.append('nome', courseData.nome);
-    formData.append('categoria', courseData.categoria);
 
     this.course.nome = courseData.nome;
     this.course.categoria = courseData.categoria;
