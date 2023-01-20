@@ -13,8 +13,10 @@ import { CourseService } from '../../services/course.service';
 export class CourseFormComponent {
 
   @Output() onSubmit = new EventEmitter<Course>
+  @Input() btnText!: string
+  @Input() courseData: Course | null = null;
 
-  public courseForm: FormGroup;
+  courseForm!: FormGroup;
 
 
   constructor(private courseService: CourseService,
@@ -26,19 +28,25 @@ export class CourseFormComponent {
   }
 
   ngOnInit(): void{
+    //está assim para funcionar o edit recebendo o courseData
     this.courseForm = this.fb.group({
-      nome: ['', [Validators.required]],
-      categoria: ['', [Validators.required]],
+      id: new FormControl (this.courseData ? this.courseData.curso_id: ''),
+      nome: new FormControl (this.courseData ? this.courseData.nome: ''),
+      categoria: new FormControl (this.courseData ? this.courseData.categoria: ''),
     });
-  
+
+
+    // this.momentForm = new FormGroup({
+    //   id: new FormControl(this.momentData ? this.momentData.id : ''),
+    //   title: new FormControl(this.momentData ? this.momentData.title : '', Validators.required),
+    //   description: new FormControl(this.momentData ? this.momentData.description : '', Validators.required),
+    //   image: new FormControl(''),
+    // });
   }
 
-  createCourse(){
-    this.courseService.postCourses(this.courseForm.value).subscribe(result =>{});
-    this.messageService.add('Curso adicionado com sucesso!');
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 1000);
+  submit(){
+    console.log(this.courseForm.value)
+    this.onSubmit.emit(this.courseForm.value)
   }
 
 }

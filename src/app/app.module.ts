@@ -23,6 +23,7 @@ import {MatTableModule} from '@angular/material/table';
 import { CourseComponent } from './components/course/course.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
 
 
 
@@ -38,7 +39,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     NewCourseComponent,
     MessagesComponent,
     CourseComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,

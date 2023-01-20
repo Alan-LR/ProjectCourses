@@ -36,7 +36,7 @@ export class CourseComponent {
 
   deleteCourse(id: Number){
       const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-        data: 'Tem certeza que deseja remover esse momento?',
+        data: 'Tem certeza que deseja remover esse curso?',
       });
   
       dialogRef.afterClosed().subscribe((result: boolean) => {

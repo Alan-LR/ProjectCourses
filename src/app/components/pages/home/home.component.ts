@@ -44,8 +44,4 @@ export class HomeComponent {
     });
   }
 
-  testeId(id: number){
-    console.log('esse é o id: ' + id)
-  }
-
 }

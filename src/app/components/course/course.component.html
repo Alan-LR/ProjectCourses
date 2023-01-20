@@ -12,7 +12,7 @@
                     <mat-card-content style="width: 50%;"><h3>Categoria: {{course.categoria}}</h3></mat-card-content>
                 </div>
                 <div>
-                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" routerLink="/course/edit/{{course.curso_id}}">
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button mat-icon-button color="warn" aria-label="Example icon button with a home icon" (click)="deleteCourse(course.curso_id)">

@@ -1,3 +1,4 @@
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
 import { CourseComponent } from './components/course/course.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NewCourseComponent } from './components/pages/new-course/new-course.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'course/new', component: NewCourseComponent},
   {path: 'course/:id', component: CourseComponent},
+  {path: 'course/edit/:id', component: EditCourseComponent}
 ];
 
 @NgModule({

@@ -1,16 +1,16 @@
-<form [formGroup]="courseForm">
+<form (ngSubmit)="submit()" [formGroup]="courseForm" #formDir="ngForm">
     <div class="formulario">
         <mat-form-field appearance="fill">
             <mat-label>Nome:</mat-label>
-            <input matInput type="text" placeholder="Digite um titulo" formControlName="nome" required >
+            <input matInput type="text" placeholder="Digite um titulo" formControlName="nome" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
             <mat-label>Categoria:</mat-label>
-            <input matInput type="text" placeholder="Digite um titulo" formControlName="categoria" required >
+            <input matInput type="text" placeholder="Digite um titulo" formControlName="categoria" required>
         </mat-form-field>
-        <button mat-raised-button color="primary" 
-            style="width: 150px; margin: 0 auto;" (click)="createCourse()">
-            Adicionar!</button>
+        <button mat-raised-button color="primary" style="width: 150px; margin: 0 auto;" type="submit">
+            {{btnText}}
+        </button>
     </div>
 </form>
