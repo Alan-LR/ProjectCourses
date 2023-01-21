@@ -22,3 +22,17 @@
     color: #3f51b5;
     margin-bottom: 0.5em;
   }
+
+  .lesson{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .form-group{
+    display: flex;
+    flex-direction: column;
+  }

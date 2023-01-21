@@ -1,29 +1,30 @@
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //imports para o formulário
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { CourseFormComponent } from './components/course-form/course-form.component';
+import { CourseComponent } from './components/course/course.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MessagesComponent } from './components/messages/messages.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewCourseComponent } from './components/pages/new-course/new-course.component';
-import { HttpClientModule } from '@angular/common/http';
-import { MessagesComponent } from './components/messages/messages.component'; //Para utilizar o services
-import {MatCardModule} from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
-import { CourseComponent } from './components/course/course.component';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { EditCourseComponent } from './components/edit-course/edit-course.component';
+
 
 
 
