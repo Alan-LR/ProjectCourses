@@ -35,26 +35,31 @@
         <mat-card-content>
             <div class="lesson-form">
                 <h4>Adicione uma aula:</h4>
-                <form [formGroup]="lessonForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
+                <form>
                     <div class="form-group">
                         <mat-form-field class="example-full-width">
                             <mat-label>URL da aula:</mat-label>
                             <textarea matInput placeholder="https://www.youtube.com/..."
-                                formControlName="aulaLink"></textarea>
+                                 [(ngModel)]="aula.aulaLink" name="aulaLink" id="aulaLink"></textarea>
                         </mat-form-field>
                     </div>
                     <div class="form-group">
                         <mat-form-field class="example-form-field">
                             <mat-label>Nome da aula:</mat-label>
-                            <input matInput type="text" formControlName="nomeAula">
+                            <input matInput type="text" [(ngModel)]="aula.nomeAula" name="nomeAula" id="nomeAula">
                         </mat-form-field>
                     </div>
-                    <button mat-raised-button color="primary">Adicionar</button>
+                    <button mat-raised-button color="primary" (click)="saveCourse()">Adicionar</button>
                 </form>
             </div>
         </mat-card-content>
       </mat-card>
       
 </div>
+
+
+<!-- 
+    [formGroup]="lessonForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)"
+-->
 
 

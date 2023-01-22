@@ -1,4 +1,5 @@
-import { Lesson } from './../models-interface/lesson';
+import { Aula } from '../models-interface/Aula';
+
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -18,7 +19,7 @@ export class LessonService {
 
   constructor(private http: HttpClient) { }
 
-  createLesson(data: Lesson): Observable<Lesson>{
-    return this.http.post<Lesson>(this.apiUrl, data, this.httpOptions);
+  createLesson(data: Aula): Observable<Aula>{
+    return this.http.post<Aula>(this.apiUrl, data, this.httpOptions);
   }
 }

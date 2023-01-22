@@ -17,6 +17,7 @@ export class CourseService {
     })
   };
 
+
   constructor(private http: HttpClient) { }
 
   postCourses(course: Course): Observable<Course> {
@@ -26,6 +27,10 @@ export class CourseService {
   updateCourse(id: Number, courseData: Course): Observable<Course> {
     const url = `${this.apiUrl}${id}`;
     return this.http.put<Course>(url, courseData);
+  }
+
+  updateCourseLesson(course): Observable<any> {
+    return this.http.put<any>(this.apiUrl, course);
   }
 
   getCourses(): Observable<Course[]> {

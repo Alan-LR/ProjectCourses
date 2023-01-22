@@ -1,6 +1,6 @@
-export interface Lesson{
+export class Aula{
     id?: number;
     nomeAula: string;
     aulaLink: string;
-    curso: number;
+    //curso: number;
 }
