@@ -1,65 +1,106 @@
-<div class="course" *ngIf="course">
-    <mat-card class="mat-card-style tamanho-table" style="margin-bottom: 0.8em;">
-        <mat-card-content>
-            <mat-toolbar color="primary">
-                <span>Curso:</span>
-            </mat-toolbar>
+<div class="page">
 
-            <mat-card class="items-curso">
-                <div class="posicao-curso">
-                    <mat-card-content style="width: 50%;">
-                        <h3>Nome: {{course.nome}}</h3>
-                    </mat-card-content>
-                    <mat-card-content style="width: 50%;">
-                        <h3>Categoria: {{course.categoria}}</h3>
-                    </mat-card-content>
+
+    <div class="course" *ngIf="course">
+        <mat-card class="mat-card-style tamanho-table" style="margin-bottom: 0.8em;">
+            <mat-card-content>
+                <mat-toolbar color="primary">
+                    <span>Curso:</span>
+                </mat-toolbar>
+
+                <mat-card class="items-curso">
+                    <div class="posicao-curso">
+                        <mat-card-content style="width: 50%;">
+                            <h3>Nome: {{course.nome}}</h3>
+                        </mat-card-content>
+                        <mat-card-content style="width: 50%;">
+                            <h3>Categoria: {{course.categoria}}</h3>
+                        </mat-card-content>
+                    </div>
+                    <div>
+                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"
+                            routerLink="/course/edit/{{course.curso_id}}">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" aria-label="Example icon button with a home icon"
+                            (click)="deleteCourse(course.curso_id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </mat-card>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <!--form de aulas-->
+    <div class="lesson" style="margin-bottom: 1em;">
+        <mat-card>
+            <mat-card-content>
+                <div class="lesson-form">
+                    <h4>Adicione uma aula:</h4>
+                    <form>
+                        <div class="form-group">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>URL da aula:</mat-label>
+                                <textarea matInput placeholder="https://www.youtube.com/..." [(ngModel)]="aula.aulaLink"
+                                    name="aulaLink" id="aulaLink"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field class="example-form-field">
+                                <mat-label>Nome da aula:</mat-label>
+                                <input matInput type="text" [(ngModel)]="aula.nomeAula" name="nomeAula" id="nomeAula">
+                            </mat-form-field>
+                        </div>
+                        <button mat-raised-button color="primary" (click)="saveCourse()">Adicionar</button>
+                    </form>
                 </div>
-                <div>
-                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"
-                        routerLink="/course/edit/{{course.curso_id}}">
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+    <!--Renderizar aulas na tela!-->
+    <div class="aulasCurso">
+        <div class="aulas" *ngIf="course.aulas!.length > 0; else semAulas">
+            <mat-card *ngFor="let aula of aulasVideo" style="margin-bottom: 0.5em;" class="card-aula">
+                <mat-card-header>
+                    <mat-card-title>{{aula.nomeAula}}</mat-card-title>
+                    <mat-card-content>
+                        <div>
+                            <iframe width="560" height="315" [src]="aula.urlSafe" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" aria-label="Example icon button with a home icon"
-                        (click)="deleteCourse(course.curso_id)">
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a home icon">
                         <mat-icon>delete</mat-icon>
                     </button>
-                </div>
+                </mat-card-actions>
             </mat-card>
-        </mat-card-content>
-    </mat-card>
+
+
+        </div>
+
+    </div>
+
+    <ng-template #semAulas>
+        <div class="semAulas">
+            <mat-card class="card-no-aulas">
+                <mat-card-header>
+                    <mat-card-title>Ainda não há aulas registradas este curso</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </ng-template>
+
+
 </div>
-
-<!--form de aulas-->
-<div class="lesson">
-    <mat-card>
-        <mat-card-content>
-            <div class="lesson-form">
-                <h4>Adicione uma aula:</h4>
-                <form>
-                    <div class="form-group">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>URL da aula:</mat-label>
-                            <textarea matInput placeholder="https://www.youtube.com/..."
-                                 [(ngModel)]="aula.aulaLink" name="aulaLink" id="aulaLink"></textarea>
-                        </mat-form-field>
-                    </div>
-                    <div class="form-group">
-                        <mat-form-field class="example-form-field">
-                            <mat-label>Nome da aula:</mat-label>
-                            <input matInput type="text" [(ngModel)]="aula.nomeAula" name="nomeAula" id="nomeAula">
-                        </mat-form-field>
-                    </div>
-                    <button mat-raised-button color="primary" (click)="saveCourse()">Adicionar</button>
-                </form>
-            </div>
-        </mat-card-content>
-      </mat-card>
-      
-</div>
-
-
 <!-- 
     [formGroup]="lessonForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)"
 -->
-
-

@@ -1,38 +1,78 @@
-.tamanho-table{
-    width: 95%;
-    margin: 1em auto;
-   
-  }
+.page {
+  display: flex;
+  flex-direction: column;
+}
 
-  .items-curso{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.tamanho-table {
+  width: 95%;
+  margin: 1em auto;
 
-  }
-  .posicao-curso{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: baseline;
-    width: 70%;
-  }
+}
 
-  h3{
-    color: #3f51b5;
-    margin-bottom: 0.5em;
-  }
+.items-curso {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 
-  .lesson{
-    display: flex;
-    flex-direction: column;
-    margin-top: 2em;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-  }
+}
 
-  .form-group{
-    display: flex;
-    flex-direction: column;
-  }
+.posicao-curso {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 70%;
+}
+
+h3 {
+  color: #3f51b5;
+  margin-bottom: 0.5em;
+}
+
+.lesson {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.aulasCurso {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aulas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-aula {
+  margin-left: 0.5em;
+  width: 48%;
+}
+
+.card-no-aulas {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+.semAulas {
+  padding-bottom: 1em;
+  width: 80%;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}

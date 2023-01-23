@@ -17,6 +17,10 @@ export class CourseService {
     })
   };
 
+  httpCors = {
+    headers: new HttpHeaders({})
+  };
+
 
   constructor(private http: HttpClient) { }
 
@@ -29,8 +33,9 @@ export class CourseService {
     return this.http.put<Course>(url, courseData);
   }
 
-  updateCourseLesson(course): Observable<any> {
-    return this.http.put<any>(this.apiUrl, course);
+  updateCourseLesson(course: Course): Observable<any> {
+    const url = `${this.apiUrl}/alterando/` 
+    return this.http.put<any>(url, course, this.httpOptions);
   }
 
   getCourses(): Observable<Course[]> {
