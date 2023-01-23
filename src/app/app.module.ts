@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NewCourseComponent } from './components/pages/new-course/new-course.component';
+
 
 
 
@@ -57,7 +59,8 @@ import { NewCourseComponent } from './components/pages/new-course/new-course.com
     HttpClientModule,
     MatCardModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

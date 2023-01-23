@@ -32,6 +32,10 @@ export class AulaService {
     return this.http.get<ResponsePageable>(this.apiUrl + 'curso/' + id, this.httpOptions);
   }
 
+  deleteLesson(id: Number) {
+    return this.http.delete(`${this.apiUrl}${id}`)
+  }
+
   // public getLivesWithFlag(flag: string): Observable<ResponsePageable>{
   //   return this.httpClient.get<ResponsePageable>(this.apiUrl + '?flag=' + flag)
   // }

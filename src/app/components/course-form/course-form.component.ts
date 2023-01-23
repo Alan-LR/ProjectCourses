@@ -5,6 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { CourseService } from '../../services/course.service';
 
+
 @Component({
   selector: 'app-course-form',
   templateUrl: './course-form.component.html',
@@ -14,6 +15,7 @@ export class CourseFormComponent {
 
   @Output() onSubmit = new EventEmitter<Course>
   @Input() btnText!: string
+  @Input() btnCancel!: string
   @Input() courseData: Course | null = null;
 
   courseForm!: FormGroup;
@@ -22,7 +24,7 @@ export class CourseFormComponent {
   constructor(private courseService: CourseService,
     private fb : FormBuilder,
     private messageService: MessageService,
-    private router: Router
+    private router: Router,
     ){
 
   }
@@ -40,5 +42,6 @@ export class CourseFormComponent {
     console.log(this.courseForm.value)
     this.onSubmit.emit(this.courseForm.value)
   }
+
 
 }

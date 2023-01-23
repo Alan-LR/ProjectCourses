@@ -1,4 +1,5 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Location } from '@angular/common';
 import { MessageService } from './../../services/message.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from './../../services/course.service';
@@ -23,6 +24,7 @@ export class EditCourseComponent {
     private router: Router, // para redirecionar a página
     private messageService: MessageService,
     private fb: FormBuilder,
+    private location: Location,//pegar a localização e voltar a página
   ) {
   }
 
@@ -49,10 +51,12 @@ export class EditCourseComponent {
 
 
     setTimeout(() => {
-      this.router.navigate(['/']);
+      this.location.back();
     }, 1500);
+  }
 
-
+  voltar(){
+    this.location.back(); //volta a página anterior
   }
 
 

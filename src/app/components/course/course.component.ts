@@ -1,7 +1,7 @@
 import { AulaService } from './../../services/Aula.service';
 import { Aula } from '../../models-interface/Aula';
 
-import { FormGroup, FormGroupDirective, FormControl, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 import { ConfirmDialogComponent } from './../confirm-dialog/confirm-dialog.component';
 import { MessageService } from './../../services/message.service';
 import { CourseService } from './../../services/course.service';
@@ -33,6 +33,7 @@ export class CourseComponent {
     public dialog: MatDialog,
     public sanitizer: DomSanitizer,
     private aulaService: AulaService,
+    private location: Location,//pegar a localização e voltar a página
 
   ) {
 
@@ -91,9 +92,33 @@ export class CourseComponent {
       console.info("curso atualizado!")
     })
     this.messageService.add("Aula adicionada com sucesso!")
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1500);
   }
 
+  deletarAula(id: Number){
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: 'Tem certeza que deseja remover essa aula?',
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      if (result) { //se for verdadeiro
+        //deletando
+        this.aulaService.deleteLesson(id).subscribe(
+          () => {
+            this.messageService.add('Excluído com sucesso!')
+            setTimeout(() => {
+              window.location.reload();
+            }, 1500);
+          })
+      }
+    });
+  }
+
+  voltar(){
+    this.location.back(); //volta a página anterior
+  }
 
 }
 
