@@ -1,11 +1,10 @@
 <div class="page">
 
-
     <div class="course" *ngIf="course">
         <mat-card class="mat-card-style tamanho-table" style="margin-bottom: 0.8em;">
             <mat-card-content>
                 <mat-toolbar color="primary">
-                    <span>Curso:</span>
+                    <span style="margin-left: 0.5em;">Curso:</span>
                 </mat-toolbar>
 
                 <mat-card class="items-curso">
@@ -33,23 +32,23 @@
     </div>
 
     <!--form de aulas-->
-    <div class="lesson" style="margin-bottom:5em; margin-top: 2em;">
+    <div class="lesson" style="margin-bottom:2em; margin-top: 2em;">
         <mat-card>
             <mat-card-content>
                 <div class="lesson-form">
                     <h4>Adicione uma aula:</h4>
                     <form>
                         <div class="form-group">
+                            <mat-form-field class="example-form-field">
+                                <mat-label>Nome da aula:</mat-label>
+                                <input matInput type="text" [(ngModel)]="aula.nomeAula" name="nomeAula" id="nomeAula">
+                            </mat-form-field>
+                        </div>
+                        <div class="form-group">
                             <mat-form-field class="example-full-width">
                                 <mat-label>URL da aula:</mat-label>
                                 <textarea matInput placeholder="https://www.youtube.com/..." [(ngModel)]="aula.aulaLink"
                                     name="aulaLink" id="aulaLink"></textarea>
-                            </mat-form-field>
-                        </div>
-                        <div class="form-group">
-                            <mat-form-field class="example-form-field">
-                                <mat-label>Nome da aula:</mat-label>
-                                <input matInput type="text" [(ngModel)]="aula.nomeAula" name="nomeAula" id="nomeAula">
                             </mat-form-field>
                         </div>
                         <button mat-raised-button color="primary" (click)="saveCourse()">Adicionar</button>
@@ -62,33 +61,42 @@
     <!--Renderizar aulas na tela!-->
 
     <div class="aulas" *ngIf="course.aulas!.length > 0; else semAulas">
-        <div class="aulasLinha" >
-            <mat-card *ngFor="let aula of aulasVideo" style="margin-bottom: 1.5em;" class="card-aula"
-                fxFlex="0 1 calc(50% - 11px)" fxFlex.lt-lg="0 1 calc(50% - 11px)" fxFlex.lt-md="100%" fxFlex.lt-sm="100%">
-                <mat-card-header>
-                    <mat-card-title>{{aula.nomeAula}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div>
-                        <iframe width="500" height="315" [src]="aula.urlSafe" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </mat-card-content>
-                <mat-card-actions align="end">
-                    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-icon-button color="warn" aria-label="Example icon button with a home icon"
-                        (click)="deletarAula(aula.id)">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
+
+        <mat-card class="mat-card-style tamanho-table" style="margin-bottom: 0.8em;">
+            <mat-card-content>
+                <mat-toolbar color="primary">
+                    <span style="margin-left: 0.5em;">Aulas:</span>
+                </mat-toolbar>
+
+                <div class="aulasLinha">
+                    <mat-card *ngFor="let aula of aulasVideo" class="card-aula"
+                        fxFlex="0 1 calc(50% - 11px)" fxFlex.lt-lg="0 1 calc(50% - 11px)" fxFlex.lt-md="100%"
+                        fxFlex.lt-sm="100%">
+                        <mat-card-header style="margin-bottom: 1em;">
+                            <mat-card-title>{{aula.nomeAula}}</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div>
+                                <iframe width="500" height="315" [src]="aula.urlSafe" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions align="end">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-icon-button color="warn" aria-label="Example icon button with a home icon"
+                                (click)="deletarAula(aula.id)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </mat-card-content>
+        </mat-card>
 
     </div>
-
     <ng-template #semAulas>
         <div class="semAulas">
             <mat-card class="card-no-aulas">
@@ -98,8 +106,6 @@
             </mat-card>
         </div>
     </ng-template>
-
-
 </div>
 <!-- 
     [formGroup]="lessonForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)"

@@ -43,7 +43,7 @@ h3 {
   flex-direction: column;
 }
 
-.aulasLinha{
+.aulasLinha {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -51,9 +51,11 @@ h3 {
 }
 
 .card-aula {
+  margin-bottom: 1em;
+  margin-top: 1em;
   margin-left: 0.5em;
   align-items: center;
- 
+
 }
 
 .card-no-aulas {
@@ -70,4 +72,3 @@ h3 {
   text-align: center;
   margin: 0 auto;
 }
-
